@@ -3,18 +3,17 @@ import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as apigateway from "aws-cdk-lib/aws-apigateway";
 import { Construct } from "constructs";
 import path from "path";
+import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class SupermarketCompBackendStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const testLambda = new lambda.Function(this, "TestLambda", {
+    const testLambda = new NodejsFunction(this, "TestLambda", {
       runtime: lambda.Runtime.NODEJS_20_X,
       handler: "test-lambda.handler",
-      code: lambda.Code.fromAsset(
-        path.join(__dirname, "../resources/lambdas/test-lambda.ts")
-      ),
+      entry: path.join(__dirname, "../resources/lambdas/test-lambda.ts"),
     });
 
     const api = new apigateway.RestApi(this, "TestApi", {
