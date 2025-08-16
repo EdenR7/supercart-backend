@@ -11,7 +11,7 @@ export const handler = async (
   console.log("context", context);
   console.log("event", event);
   return {
-    body: "Good Evening, World!",
+    body: "Good Morning, World!",
     statusCode: 200,
   };
 };
