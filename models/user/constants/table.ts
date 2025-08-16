@@ -1,5 +1,5 @@
 // Table configuration constants for User model
-export const USER_TABLE_NAME = "supermarket-users"; // DynamoDB table name for users (changed from "users" to avoid conflicts)
+export const USER_TABLE_NAME = "supercart-users"; // DynamoDB table name for users (changed from "users" to avoid conflicts)
 export const USER_TABLE_REGION = "us-east-1"; // AWS region for the table
 export const USER_TABLE_BILLING_MODE = "PAY_PER_REQUEST"; // Billing mode for cost optimization
 export const USER_TABLE_REMOVAL_POLICY = "DESTROY"; // Table removal policy for development
